@@ -149,6 +149,46 @@
   .btn-rose:hover { background: var(--rose-light); transform: translate(-2px, -2px); }
   .btn-rose:hover::after { transform: translate(4px, 4px); }
 
+  .hero-promo-price {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    margin-bottom: 32px;
+    padding: 16px 22px;
+    border-left: 2px solid var(--rose-light);
+    background: rgba(139,26,46,0.12);
+    width: fit-content;
+  }
+
+  .hero-promo-de {
+    font-size: 14px;
+    font-weight: 300;
+    color: rgba(255,255,255,0.4);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  .hero-promo-de s {
+    text-decoration-color: rgba(255,255,255,0.35);
+    font-size: 15px;
+  }
+
+  .hero-promo-por {
+    font-size: 14px;
+    font-weight: 300;
+    color: rgba(255,255,255,0.55);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  .hero-promo-por strong {
+    color: var(--gold);
+    font-size: 28px;
+    font-weight: 700;
+    font-family: 'Playfair Display', serif;
+    letter-spacing: 0;
+  }
+
   .hero-price-note {
     margin-top: 18px;
     font-size: 13px;
@@ -776,6 +816,254 @@
   }
   .fade-in.visible { opacity: 1; transform: none; }
 
+  /* ─── URGÊNCIA BANNER ──────────────────────────── */
+  .urgencia-banner {
+    background: var(--rose);
+    padding: 13px 24px;
+    text-align: center;
+    position: sticky;
+    top: 0;
+    z-index: 999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 14px;
+    box-shadow: 0 2px 20px rgba(0,0,0,0.35);
+  }
+
+  .urgencia-banner::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: repeating-linear-gradient(
+      90deg,
+      transparent,
+      transparent 6px,
+      rgba(255,255,255,0.03) 6px,
+      rgba(255,255,255,0.03) 12px
+    );
+    pointer-events: none;
+  }
+
+  .urgencia-texto {
+    font-family: 'Lato', sans-serif;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.9);
+  }
+
+  .urgencia-separador {
+    width: 1px;
+    height: 16px;
+    background: rgba(255,255,255,0.3);
+    flex-shrink: 0;
+  }
+
+  .urgencia-countdown {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    flex-shrink: 0;
+  }
+
+  .urgencia-clock {
+    font-size: 12px;
+    color: rgba(255,255,255,0.5);
+  }
+
+  .countdown-timer {
+    font-family: 'Playfair Display', serif;
+    font-size: 17px;
+    font-weight: 700;
+    color: var(--gold);
+    letter-spacing: 0.05em;
+    min-width: 62px;
+    text-align: center;
+  }
+
+  .urgencia-cta-link {
+    font-family: 'Lato', sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--gold);
+    text-decoration: none;
+    border-bottom: 1px solid rgba(201,147,74,0.45);
+    padding-bottom: 1px;
+    transition: color 0.2s, border-color 0.2s;
+    flex-shrink: 0;
+  }
+
+  .urgencia-cta-link:hover { color: #fff; border-color: rgba(255,255,255,0.4); }
+
+  /* ─── BLOCO DE URGÊNCIA NO CTA FINAL ──────────── */
+  .urgencia-cta-block {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    padding: 16px 28px;
+    border: 1px solid rgba(201,147,74,0.25);
+    background: rgba(201,147,74,0.06);
+    margin-bottom: 8px;
+    position: relative;
+    z-index: 2;
+  }
+
+  .urgencia-cta-block::before {
+    content: '';
+    position: absolute;
+    left: 0; top: 0; bottom: 0;
+    width: 3px;
+    background: var(--gold);
+  }
+
+  .urgencia-icon {
+    font-size: 22px;
+    flex-shrink: 0;
+    animation: pulse-icon 2s ease-in-out infinite;
+  }
+
+  @keyframes pulse-icon {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.12); }
+  }
+
+  .urgencia-cta-texto {
+    text-align: left;
+  }
+
+  .urgencia-cta-titulo {
+    font-family: 'Lato', sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 3px;
+  }
+
+  .urgencia-cta-subtitulo {
+    font-family: 'Playfair Display', serif;
+    font-size: 15px;
+    font-style: italic;
+    color: rgba(255,255,255,0.6);
+    line-height: 1.4;
+  }
+
+  @media (max-width: 820px) {
+    .urgencia-banner { flex-wrap: wrap; gap: 8px; padding: 10px 16px; }
+    .urgencia-separador { display: none; }
+    .urgencia-cta-block { flex-direction: column; text-align: center; gap: 10px; }
+    .urgencia-cta-texto { text-align: center; }
+  }
+
+
+  /* ─── BLOCO VÍCIO EMOCIONAL ───────────────── */
+  .bloco-vicio-emocional {
+    background: var(--dark);
+    padding: 110px 80px;
+    text-align: center;
+    position: relative;
+  }
+
+  .bloco-vicio-inner {
+    max-width: 760px;
+    margin: 0 auto;
+  }
+
+  .bloco-vicio-emocional h2 {
+    color: #fff;
+    margin-bottom: 34px;
+  }
+
+  .bloco-vicio-emocional h2 em {
+    color: var(--rose-light);
+  }
+
+  .bloco-vicio-texto {
+    color: rgba(255,255,255,0.72);
+    font-size: 18px;
+    line-height: 1.9;
+  }
+
+  .bloco-vicio-texto strong {
+    color: var(--gold);
+  }
+
+  /* ─── PRINTS EBOOK ───────────────── */
+  .prints-ebook {
+    background: var(--cream);
+    padding: 110px 80px;
+  }
+
+  .prints-header {
+    text-align: center;
+    margin-bottom: 60px;
+  }
+
+  .prints-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 24px;
+  }
+
+  .print-card {
+    background: #fff;
+    border: 1px solid rgba(139,26,46,0.12);
+    overflow: hidden;
+    transition: transform 0.25s;
+  }
+
+  .print-card:hover {
+    transform: translateY(-4px);
+  }
+
+  .print-placeholder {
+    height: 320px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    text-align: center;
+    background: linear-gradient(145deg, #fff 0%, #f7ebe8 100%);
+    color: var(--rose);
+    font-family: 'Playfair Display', serif;
+    font-size: 24px;
+    font-weight: 700;
+  }
+
+  .print-card p {
+    padding: 18px;
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--text);
+    text-align: center;
+  }
+
+  /* ─── FRASE FINAL ───────────────── */
+  .frase-final {
+    max-width: 700px;
+    margin: 0 auto 42px;
+    text-align: center;
+  }
+
+  .frase-final h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 34px;
+    color: #fff;
+    margin-bottom: 18px;
+  }
+
+  .frase-final p {
+    color: rgba(255,255,255,0.6);
+    font-size: 18px;
+    line-height: 1.8;
+  }
+
+
   /* ─── RESPONSIVE ─────────────────────────────── */
   @media (max-width: 820px) {
     .hero { grid-template-columns: 1fr; min-height: auto; }
@@ -793,6 +1081,18 @@
 </head>
 <body>
 
+<!-- BANNER DE URGÊNCIA -->
+<div class="urgencia-banner">
+  <span class="urgencia-texto">Oferta promocional por tempo limitado</span>
+  <div class="urgencia-separador"></div>
+  <div class="urgencia-countdown">
+    <span class="urgencia-clock">⏳</span>
+    <span class="countdown-timer" id="countdown">00:00:00</span>
+  </div>
+  <div class="urgencia-separador"></div>
+  <a href="#comprar" class="urgencia-cta-link">Garantir agora →</a>
+</div>
+
 <!-- HERO -->
 <section class="hero" style="padding:0;">
   <div class="hero-noise"></div>
@@ -806,10 +1106,26 @@
       PODRE
     </h1>
     <p class="hero-subtitle-line">Como Transformar Seu Relacionamento em um "Jardim de Rosas"</p>
+
+    <div class="hero-promo-price">
+      <span class="hero-promo-de">DE: <s>R$57,90</s></span>
+      <span class="hero-promo-por">POR: <strong>R$37,90</strong></span>
+    </div>
+
     <p class="hero-desc">
       Para quem está <strong>cansado de repetir os mesmos padrões</strong> em relacionamentos e quer, de uma vez por todas, aprender a amar de forma saudável e consciente.
     </p>
-    <a href="https://pay.kiwify.com.br/InH2UGt" class="btn-rose">Quero o guia agora</a>
+    
+<div class="frase-final fade-in">
+  <h3>“O problema nunca foi azar.”</h3>
+
+  <p>
+    Talvez você só nunca tenha entendido as feridas emocionais
+    que estavam escolhendo por você.
+  </p>
+</div>
+
+<a href="https://pay.kiwify.com.br/InH2UGt" class="btn-rose">Quero quebrar esse padrão</a>
     <p class="hero-price-note">por apenas <strong>R$37,90</strong> — acesso imediato</p>
   </div>
 
@@ -876,7 +1192,13 @@
         <span class="check">✓</span>
         <span><strong>Aceita menos do que merece.</strong> Porque no fundo não sente que merece mais.</span>
       </li>
-    </ul>
+    
+<li>
+  <div class="check">✓</div>
+  <span><strong>Percebe sinais mas continua insistindo.</strong></span>
+</li>
+</ul>
+
   </div>
   <div class="fade-in">
     <div class="quote-block">
@@ -1064,6 +1386,13 @@
   <h2 class="fade-in">A mudança começa<br>quando você <em>decide.</em></h2>
   <p class="lead fade-in">Não muda porque você quer. Muda porque você age. E a primeira ação começa aqui.</p>
   <div class="cta-box fade-in">
+    <div class="urgencia-cta-block fade-in">
+      <span class="urgencia-icon">🌹</span>
+      <div class="urgencia-cta-texto">
+        <div class="urgencia-cta-titulo">Condição promocional disponível hoje</div>
+        <div class="urgencia-cta-subtitulo">DE R$57,90 → POR R$37,90 — apenas por tempo limitado</div>
+      </div>
+    </div>
     <div class="price-display">R$37,90</div>
     <p class="price-label">pagamento único • acesso imediato ao ebook completo</p>
     <a href="https://pay.kiwify.com.br/InH2UGt" class="btn-rose" style="font-size:15px; padding: 22px 60px;">Quero o Guia Agora</a>
@@ -1078,6 +1407,33 @@
 </footer>
 
 <script>
+  // Countdown timer — persists across page reloads using sessionStorage
+  (function() {
+    const KEY = 'promo_deadline';
+    let deadline = sessionStorage.getItem(KEY);
+    if (!deadline) {
+      // 23 minutes from first visit
+      deadline = Date.now() + 23 * 60 * 1000;
+      sessionStorage.setItem(KEY, deadline);
+    }
+    deadline = parseInt(deadline);
+
+    function update() {
+      const remaining = deadline - Date.now();
+      if (remaining <= 0) {
+        document.getElementById('countdown').textContent = '00:00';
+        return;
+      }
+      const m = Math.floor(remaining / 60000);
+      const s = Math.floor((remaining % 60000) / 1000);
+      document.getElementById('countdown').textContent =
+        String(m).padStart(2,'0') + ':' + String(s).padStart(2,'0');
+    }
+
+    update();
+    setInterval(update, 1000);
+  })();
+
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(e => {
       if (e.isIntersecting) {
